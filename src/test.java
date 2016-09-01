@@ -21,18 +21,17 @@ public class test {
             for (int j = 0; j < i; j++) {
                 if (randomNumbers.get(j) > randomNumbers.get(j+1)) {
                     double temp = randomNumbers.get(j);
-                    //randomNumbers.add(i);
-                    //arg[j] = arg[j + 1];
-                    //arg[j + 1] = temp;
+                    randomNumbers.add(i, randomNumbers.get(j+1));
+                    randomNumbers.add((j + 1), temp);
                 }
             }
         }
 
-        //for (int i = 0; i < arg.length; i++) {
-           // System.out.print(arg[i] + " ");
+        for (int i = 0; i < randomNumbers.size(); i++) {
+            System.out.print(randomNumbers.get(i) + " ");
         }
 
     }
 
 
-//}
+}
