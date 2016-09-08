@@ -30,6 +30,11 @@ public class BubbleSort implements Runnable{
             }
         }
     }
+
+    public int[] getArr() {
+        return arr;
+    }
+
 }
 
 

@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -66,7 +65,7 @@ public class Main {
 
         System.out.println("Array Before Bubble Sort");
         for(int i=0; i < arr.length; i++){
-            //System.out.print(arr[i] + " ");
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
         long startTime = System.nanoTime();
@@ -85,6 +84,8 @@ public class Main {
             t2.join();
         }	catch	(InterruptedException	IE)	{}
 
+        int[] mergedArray = Merge.Merge(bubbleSort.getArr(), bubbleSort2.getArr());
+
         long difference = System.nanoTime() - startTime;
         System.out.println("Total execution time: " +
                 String.format("%d min, %d sec",
@@ -93,7 +94,7 @@ public class Main {
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(difference))));
         System.out.println("Array After Bubble Sort");
         for(int i=0; i < arr.length; i++){
-            //System.out.print(arr[i] + " ");
+            System.out.print(mergedArray[i] + " ");
         }
 
     }
