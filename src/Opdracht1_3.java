@@ -8,7 +8,7 @@ public class Opdracht1_3 {
 
     public static void main(String[] args) {
 
-        int amount = 400000;
+        int amount = 200000;
 
         int arr[];
         arr = new int[amount];
@@ -24,25 +24,25 @@ public class Opdracht1_3 {
         }
 
 
-        long startTime = System.nanoTime();
+        // START TIMER
+        long startTime = System.currentTimeMillis();
 
         int[] sorted = ThreadTree.ThreadTree(arr);
 
-        long difference = System.nanoTime() - startTime;
-        System.out.println("Total execution time: " +
-                String.format("%d min, %d sec, %d mil",
-                        TimeUnit.NANOSECONDS.toMinutes(difference),
-                        TimeUnit.NANOSECONDS.toSeconds(difference) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(difference)),
-                        TimeUnit.NANOSECONDS.toMillis(difference) -
-                                TimeUnit.MINUTES.toMillis(TimeUnit.NANOSECONDS.toMinutes(difference)) -
-                                TimeUnit.SECONDS.toMillis(TimeUnit.NANOSECONDS.toSeconds(difference)))
+        // EIND TIMER
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println(totalTime);
 
-        );
+
         System.out.println("Array After Bubble Sort");
         for(int i=0; i < arr.length; i++){
             //System.out.print(sorted[i] + " ");
+
         }
 
+        System.out.println("first: " + sorted[0] + " ");
+        System.out.println("mid: " + sorted[sorted.length/2] + " ");
+        System.out.println("last: " + sorted[sorted.length-1] + " ");
     }
 }

@@ -34,13 +34,16 @@ public class Opdracht1_2 {
             //System.out.print(arr[i] + " ");
         }
         System.out.println();
-        long startTime = System.nanoTime();
+
 
         BubbleSort bubbleSort = new BubbleSort(part1);
         BubbleSort bubbleSort2 = new BubbleSort(part2);
 
         Thread t1 = new Thread(bubbleSort);
         Thread t2 = new Thread(bubbleSort2);
+
+        // START TIMER
+        long startTime = System.currentTimeMillis();
 
         t1.start();
         t2.start();
@@ -52,17 +55,11 @@ public class Opdracht1_2 {
 
         int[] mergedArray = Merge.Merge(bubbleSort.getArr(), bubbleSort2.getArr());
 
-        long difference = System.nanoTime() - startTime;
-        System.out.println("Total execution time: " +
-                String.format("%d min, %d sec, %d mil",
-                        TimeUnit.NANOSECONDS.toMinutes(difference),
-                        TimeUnit.NANOSECONDS.toSeconds(difference) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(difference)),
-                        TimeUnit.NANOSECONDS.toMillis(difference) -
-                                TimeUnit.MINUTES.toMillis(TimeUnit.NANOSECONDS.toMinutes(difference)) -
-                                    TimeUnit.SECONDS.toMillis(TimeUnit.NANOSECONDS.toSeconds(difference)))
+        // EIND TIMER
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println(totalTime);
 
-        );
         System.out.println("Array After Bubble Sort");
         for(int i=0; i < arr.length; i++){
             //System.out.print(mergedArray[i] + " ");

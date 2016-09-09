@@ -9,7 +9,7 @@ public class ThreadTree {
 
         int[] doneArray;
 
-        if(arr.length>10000){
+        if(arr.length>12500){
             System.out.println("Split");
 
             int[] part1 = new int[arr.length/2];

@@ -31,21 +31,17 @@ public class Opdracht1_1 {
             //System.out.print(arr[i] + " ");
         }
         System.out.println();
-        long startTime = System.nanoTime();
-        //BubbleSort.bubbleSort(arr);//sorting array elements using bubble sort
+
+
+        // START TIMER
+        long startTime = System.currentTimeMillis();
+
         bubbleSort.run();
 
-        long difference = System.nanoTime() - startTime;
-        System.out.println("Total execution time: " +
-                String.format("%d min, %d sec, %d mil",
-                        TimeUnit.NANOSECONDS.toMinutes(difference),
-                        TimeUnit.NANOSECONDS.toSeconds(difference) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(difference)),
-                        TimeUnit.NANOSECONDS.toMillis(difference) -
-                                TimeUnit.MINUTES.toMillis(TimeUnit.NANOSECONDS.toMinutes(difference)) -
-                                TimeUnit.SECONDS.toMillis(TimeUnit.NANOSECONDS.toSeconds(difference)))
-
-        );
+        // EIND TIMER
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println(totalTime+"ms");
 
         System.out.println("Array After Bubble Sort");
         for(int i=0; i < arr.length; i++){
