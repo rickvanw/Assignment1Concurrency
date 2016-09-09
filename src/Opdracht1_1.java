@@ -8,7 +8,7 @@ public class Opdracht1_1 {
 
     public static void main(String[] args) {
 
-        int amount = 200000;
+        int amount = 400000;
 
         int arr[];
         arr = new int[amount];
@@ -41,7 +41,7 @@ public class Opdracht1_1 {
         // EIND TIMER
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println(totalTime+"ms");
+        System.out.println(totalTime+" ms");
 
         System.out.println("Array After Bubble Sort");
         for(int i=0; i < arr.length; i++){
