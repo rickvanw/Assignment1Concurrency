@@ -8,7 +8,7 @@ public class Opdracht1_1 {
 
     public static void main(String[] args) {
 
-        int amount = 150000;
+        int amount = 200000;
 
         int arr[];
         arr = new int[amount];
@@ -37,10 +37,16 @@ public class Opdracht1_1 {
 
         long difference = System.nanoTime() - startTime;
         System.out.println("Total execution time: " +
-                String.format("%d min, %d sec",
-                        TimeUnit.NANOSECONDS.toHours(difference),
+                String.format("%d min, %d sec, %d mil",
+                        TimeUnit.NANOSECONDS.toMinutes(difference),
                         TimeUnit.NANOSECONDS.toSeconds(difference) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(difference))));
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(difference)),
+                        TimeUnit.NANOSECONDS.toMillis(difference) -
+                                TimeUnit.MINUTES.toMillis(TimeUnit.NANOSECONDS.toMinutes(difference)) -
+                                TimeUnit.SECONDS.toMillis(TimeUnit.NANOSECONDS.toSeconds(difference)))
+
+        );
+
         System.out.println("Array After Bubble Sort");
         for(int i=0; i < arr.length; i++){
             //System.out.print(arr[i] + " ");

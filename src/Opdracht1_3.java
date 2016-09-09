@@ -8,7 +8,7 @@ public class Opdracht1_3 {
 
     public static void main(String[] args) {
 
-        int amount = 100000;
+        int amount = 400000;
 
         int arr[];
         arr = new int[amount];
@@ -23,36 +23,10 @@ public class Opdracht1_3 {
 
         }
 
-        int[] part1 = new int[amount/2];
-        int[] part2 = new int[amount/2];
 
-        System.arraycopy(arr, 0, part1, 0, part1.length);
-        System.arraycopy(arr, part1.length, part2, 0, part2.length);
-
-        System.out.println("Array Before Bubble Sort");
-        for(int i=0; i < arr.length; i++){
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
         long startTime = System.nanoTime();
 
-        if((amount/2)>=1000){}
-
-        BubbleSort bubbleSort = new BubbleSort(part1);
-        BubbleSort bubbleSort2 = new BubbleSort(part2);
-
-        Thread t1 = new Thread(bubbleSort);
-        Thread t2 = new Thread(bubbleSort2);
-
-        t1.start();
-        t2.start();
-
-        try	{
-            t1.join();
-            t2.join();
-        }	catch	(InterruptedException	IE)	{}
-
-        int[] mergedArray = Merge.Merge(bubbleSort.getArr(), bubbleSort2.getArr());
+        int[] sorted = ThreadTree.ThreadTree(arr);
 
         long difference = System.nanoTime() - startTime;
         System.out.println("Total execution time: " +
@@ -61,12 +35,13 @@ public class Opdracht1_3 {
                         TimeUnit.NANOSECONDS.toSeconds(difference) -
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(difference)),
                         TimeUnit.NANOSECONDS.toMillis(difference) -
-                                TimeUnit.MINUTES.toMillis(TimeUnit.NANOSECONDS.toMinutes(difference)))
+                                TimeUnit.MINUTES.toMillis(TimeUnit.NANOSECONDS.toMinutes(difference)) -
+                                TimeUnit.SECONDS.toMillis(TimeUnit.NANOSECONDS.toSeconds(difference)))
 
         );
         System.out.println("Array After Bubble Sort");
         for(int i=0; i < arr.length; i++){
-            System.out.print(mergedArray[i] + " ");
+            //System.out.print(sorted[i] + " ");
         }
 
     }
