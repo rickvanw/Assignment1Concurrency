@@ -1,5 +1,7 @@
 /**
  * Created by rickv on 8-9-2016.
+ *
+ * Class om twee arrays bij elkaar te voegen
  */
 public class Merge {
 
