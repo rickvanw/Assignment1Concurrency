@@ -7,26 +7,15 @@ public class Merge {
 
     public static int[] Merge(int[] a, int[] b) {
 
-        int[] answer = new int[a.length + b.length];
-        int i = 0, j = 0, k = 0;
+        int[]c = new int[a.length+b.length];
+        int i;
+        for(i=0; i<a.length; i++)
+            c[i] = a[i];
 
-        while (i < a.length && j < b.length)
-        {
-            if (a[i] < b[j])
-                answer[k++] = a[i++];
+        for(int j=0; j<b.length; j++)
+            c[i++]=b[j];
+        return c;
 
-            else
-                answer[k++] = b[j++];
-        }
-
-        while (i < a.length)
-            answer[k++] = a[i++];
-
-
-        while (j < b.length)
-            answer[k++] = b[j++];
-
-        return answer;
     }
 
 }

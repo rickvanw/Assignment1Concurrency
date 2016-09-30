@@ -8,7 +8,7 @@ public class Opdracht1_1 {
     public static void main(String[] args) {
 
         // Het aantal te sorteren getallen
-        int amount = 25000;
+        int amount = 400000;
 
         int arr[];
         arr = new int[amount];
@@ -28,11 +28,11 @@ public class Opdracht1_1 {
         BubbleSort bubbleSort = new BubbleSort(arr);
 
         // Uitvoer ter controle
-        System.out.println("Array Before Bubble Sort");
+        //System.out.println("Array Before Bubble Sort");
         for(int i=0; i < arr.length; i++){
             //System.out.print(arr[i] + " ");
         }
-        System.out.println();
+        //System.out.println();
 
         // START TIMER
         long startTime = System.currentTimeMillis();
@@ -46,7 +46,7 @@ public class Opdracht1_1 {
         System.out.println(totalTime+" ms");
 
         // Uitvoer ter controle
-        System.out.println("Array After Bubble Sort");
+        //System.out.println("Array After Bubble Sort");
         for(int i=0; i < arr.length; i++){
             //System.out.print(arr[i] + " ");
         }

@@ -8,7 +8,7 @@ public class Opdracht1_2 {
     public static void main(String[] args) {
 
         // Het aantal te sorteren getallen
-        int amount = 25000;
+        int amount = 800000;
 
         int arr[];
         arr = new int[amount];
@@ -32,11 +32,11 @@ public class Opdracht1_2 {
         System.arraycopy(arr, part1.length, part2, 0, part2.length);
 
         // Uitvoer ter controle
-        System.out.println("Array vóór sortering");
+        //System.out.println("Array vóór sortering");
         for(int i=0; i < arr.length; i++){
             //System.out.print(arr[i] + " ");
         }
-        System.out.println();
+        //System.out.println();
 
         // Plaatst de twee delen van de array in een eigen bubblesort
         BubbleSort bubbleSort = new BubbleSort(part1);
@@ -67,7 +67,7 @@ public class Opdracht1_2 {
         System.out.println(totalTime + " ms");
 
         // Uitvoer ter controle
-        System.out.println("Array na sortering");
+        //System.out.println("Array na sortering");
         for(int i=0; i < arr.length; i++){
             //System.out.print(mergedArray[i] + " ");
         }

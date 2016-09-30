@@ -10,8 +10,8 @@ public class ThreadTree {
         int[] doneArray;
 
         // In te stellen drempelwaarde om te bepalen of splitsing voor moet komen
-        if(arr.length>500){
-            System.out.println("Split");
+        if(arr.length>100){
+            //System.out.println("Split");
 
             int[] part1 = new int[arr.length/2];
             int[] part2 = new int[arr.length/2];
@@ -30,7 +30,7 @@ public class ThreadTree {
         }else{
 
             // Drempelwaarde wordt niet overschreden dus wordt er een nieuwe thread aangemaakt
-            System.out.println("New Thread");
+            //System.out.println("New Thread");
 
             // Uitvoer ter controle
             for(int i=0; i < arr.length; i++){
