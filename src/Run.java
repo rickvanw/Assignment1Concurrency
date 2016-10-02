@@ -6,7 +6,7 @@ public class Run {
     public static void main(String[] args) {
 
         for (int i = 0; i < 7; i++) {
-            Opdracht1_3.main(args);
+            Opdracht1_1.main(args);
         }
 
         System.out.println();
